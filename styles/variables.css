@@ -1,1 +1,30 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /* Шрифты */
+  --font-main: 'Inter', sans-serif;
+  --font-accent: 'PressStart2P', fantasy;
+
+  /* Толщина текста */
+  --text-weight: 400;
+  --title-weight: 700;
+  --bold-weight:785;
+
+  --page-width: clamp(375px, 100vw, 700px);
+
+/*color*/
+--color-black:#000;
+--color-white: #ffffff;
+--stroke-color:rgb(255, 255, 255);
+--color-red:rgb(255, 0, 0);
+
+/* gradient color */
+  --gradient-color-first: #d3d3d3;
+  --linear-color-first: #e7e7e7;
+  --linear-color-second: #1a1a1a;
+
+  /* gradients */
+  --bg-gradient: 
+    repeating-linear-gradient( to right, var(--gradient-color-first) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient( to bottom, var(--gradient-color-first) 0 2px, transparent 2px 4px),
+    linear-gradient( to bottom, var(--linear-color-first) 0.01%, var(--linear-color-second) 100%);
+}
