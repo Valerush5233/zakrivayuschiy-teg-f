@@ -14,18 +14,17 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-main);
-  /*font-variation-settings: "wght" var(--text-weight);*/
-  /*background-image: var(--bg-gradient); временно уберу*/
+  background-image: var(--bg-gradient);
   background-attachment: fixed;
   background-size: cover;
-      margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 100px;
@@ -35,10 +34,9 @@
 }
 
 .header_container {
+  text-align: center;
   padding: 130px 123px;
   border: 1px solid #000;
- 
-  
 }
 
 .header_container,
@@ -81,7 +79,7 @@
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
-  
+
   overflow: hidden;
 }
 
@@ -90,7 +88,7 @@
   align-items: center;
   font-family: var(--font-main);
   font-weight: var(--bold-weight);
-  padding: 5px 0 5px 8px;
+  padding: 5px 5px 5px 9px;
   font-size: 18px;
 }
 
@@ -108,7 +106,6 @@
   aspect-ratio: 1 / 1;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
-  
 }
 
 .label {
@@ -120,17 +117,10 @@
   color: rgb(0, 0, 0);
   font-family: var(--font-accent);
   font-size: 14px;
-    text-shadow:
-    -1px -1px 0 var(--stroke-color),
-     1px -1px 0 var(--stroke-color),
-    -1px  1px 0 var(--stroke-color),
-     1px  1px 0 var(--stroke-color);
+  text-shadow: -1px -1px 0 var(--stroke-color), 1px -1px 0 var(--stroke-color),
+    -1px 1px 0 var(--stroke-color), 1px 1px 0 var(--stroke-color);
   mix-blend-mode: hard-light;
   text-transform: uppercase;
-}
-
-.card_info {
- 
 }
 
 .card_text {
@@ -150,7 +140,7 @@
 }
 
 .card__icon-button {
-    outline: none;
+  outline: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -158,25 +148,12 @@
   display: flex;
   align-items: center;
   border: 2px solid transparent;
-  transition: border 0.3s ease; 
+  transition: border 0.3s ease;
 }
 
-/*.card__icon-button:focus {
-  outline: none;
-  border: 2px solid var(--color-black);
-}*/
 .card__icon-button:focus-visible {
-  border: 2px solid var(--color-black); 
+  border: 2px solid var(--color-black);
 }
-
-/* all about like */
-
-
-
-/*.card__icon-button:hover .like-icon path {
-  fill: red;
-}*/
-
 
 .like_button {
   display: flex;
@@ -184,6 +161,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px 35px;
+  max-width: 130px;
   border: 2px solid var(--color-black);
   background-color: var(--color-white);
   font-family: var(--font-accent);
@@ -213,24 +191,34 @@
   z-index: 0;
 }
 
+.button:hover .button_floppy {
+  color: var(--color-white);
+}
+
 .button:hover::before {
   transform: translateX(0);
 }
 
-/* текст и иконки поверх ::before и меняются по mix-blend-mode */
-.button span,
-.button svg {
+.button span {
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
 }
 
+.button_floppy {
+  position: relative;
+  z-index: 1;
+  color: var(--color-black);
+}
+
+.button:hover .button_floppy {
+  color: var(--color-white);
+}
 
 .button__text {
   font-family: var(--font-accent);
   font-size: 14px;
   font-weight: var(--text-weight);
-  
 }
 
 .main {
@@ -243,6 +231,7 @@
 
 .footer {
   margin-top: 50px;
+  margin-bottom: 100px;
   text-align: center;
 }
 
@@ -256,13 +245,13 @@
 }
 
 .modal_text {
-font-family: var(--font-accent);
-font-size: 14px;
-font-weight: var(--text-weight);
-line-height: 150%;
-letter-spacing: 0%;
-text-align: right;
-text-transform: uppercase;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-weight: var(--text-weight);
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: right;
+  text-transform: uppercase;
 }
 
 .modal_button {
@@ -280,15 +269,7 @@ text-transform: uppercase;
 
 .button_floppy {
   display: flex;
-  width: 21px;
-  height: 21px;
-  mix-blend-mode: difference;
   color: var(--color-black);
-}
-
-.modal_floppy {
-  width: 39px;
-  height: 39px;
 }
 
 .dialog {
@@ -311,8 +292,6 @@ dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(7px);
 }
-
-
 
 .close_button {
   padding: 10px 60px;
@@ -353,6 +332,24 @@ dialog::backdrop {
 }
 
 @media (width <= 375px) {
+  .header {
+    padding-bottom: 103px;
+  }
 
+  .header_title {
+    font-size: 49px;
+  }
 
+  .header_container {
+    text-align: center;
+    padding: 120px 10px;
+  }
+  .header_subtitle {
+    font-size: 14px;
+  }
+
+  .label {
+    top: 25px;
+    right: 26px;
+  }
 }
