@@ -209,15 +209,23 @@
   z-index: 0;
 }
 
-.button:hover .button_floppy {
+/* .button:hover .button_floppy {
   color: var(--color-white);
-}
+} */
 
 .button:hover::before {
   transform: translateX(0);
 }
 
-.button span {
+/* .button span {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+} */
+
+.button .text,
+.button span,
+.button .button_floppy {
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
@@ -226,7 +234,7 @@
 .button_floppy {
   position: relative;
   z-index: 1;
-  color: var(--color-black);
+  fill: currentColor;
 }
 
 .button__text {
@@ -261,6 +269,7 @@
 .modal_text {
   font-family: var(--font-accent);
   font-size: 14px;
+  padding-inline: 5px;
   font-variation-settings: "wght" var(--text-weight);
   line-height: 150%;
   letter-spacing: 0%;
