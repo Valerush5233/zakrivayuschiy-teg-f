@@ -4,6 +4,10 @@
   --font-main: 'Inter', sans-serif;
   --font-accent: 'PressStart2P', fantasy;
 
+  /* Logo */
+
+  --logo-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+
   /* Толщина текста */
   --text-weight: 400;
   --title-weight: 700;
